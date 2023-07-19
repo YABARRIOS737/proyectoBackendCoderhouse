@@ -26,7 +26,21 @@ class ProductManager {
     }
 
     updateProduct(id, product) {
+        this.products = JSON.parse(fs.readFileSync(this.path, "utf-8"));
+        let pos = this.products.findIndex(item => item.id === id);
 
+        if (pos > -1) {
+            this.products[pos].title = product.title;
+            this.products[pos].description = product.description;
+            this.products[pos].price = product.price;
+            this.products[pos].thumbnail = product.thumbnail;
+            this.products[pos].code = product.thumbnail;
+            this.products[pos].stock = product.stock;
+            fs.writeFileSync(this.path, JSON.stringify(this.products));
+            console.log("Product updated!");
+        } else {
+            console.log("Not found!");
+        }
     }
 
     deleteProduct(id) {
@@ -82,5 +96,6 @@ PM.addProduct({ title: "Curso Back-end-", description: "Modalidad a tu ritmo", p
 */
 //console.log(PM.getProductById(3));
 //console.log(PM.getProductById(1));
-PM.deleteProduct(2);
-console.log(PM.getProducts());
+//PM.deleteProduct(2);
+PM.updateProduct(2, {title: "Curso Fron-end VueJs", description: "Modalidad Online con tutorias", price: 500000, thumbnail: "No image", code: "Curso Fron-end VueJs", stock: 100})
+//console.log(PM.getProducts());
