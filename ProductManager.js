@@ -17,7 +17,7 @@ class ProductManager {
     }
 
     getProductById(id) {
-
+        return this.products.find(item => item.id === id) || "Not found";
     }
 
     validateCode(code) {
@@ -25,7 +25,7 @@ class ProductManager {
     }
 
     generateId() {
-        let max = 0;
+        /*let max = 0;
 
         this.products.forEach(item => {
             if (item.id > max) {
@@ -33,12 +33,17 @@ class ProductManager {
             }
         });
 
-        return max++;
+        return max+1;*/
+        return this.products.length > 0 ?this.products[this.products.length-1].id+1 : 1;
     }
 
 }
 
 const PM = new ProductManager();
+console.log(PM.getProducts());
 PM.addProduct({title:"Curso Front-end Online", description:"Modalidad a tu ritmo", price:500000, thumbnail:"No image", code:"Front-end", stock:25});
 PM.addProduct({title:"Curso Front-end Online", description:"Modalidad a tu ritmo", price:500000, thumbnail:"No image", code:"Front-end", stock:50});
 PM.addProduct({title:"Curso Back-end-", description:"Modalidad a tu ritmo", price:500000, thumbnail:"No image", code:"Back-end", stock:100});
+console.log(PM.getProducts());
+console.log(PM.getProductById(2));
+console.log(PM.getProductById(3));
