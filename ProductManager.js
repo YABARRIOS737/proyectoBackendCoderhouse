@@ -110,7 +110,7 @@ class ProductManager {
     await PM.addProduct({ title: "Curso Back-end-", description: "Modalidad a tu ritmo", price: 500000, thumbnail: "No image", code: "Back-end", stock: 100 });
     console.log(await PM.getProductById(3));
     console.log(await PM.getProductById(1));
-    await PM.deleteProduct(2);
-    await PM.updateProduct(2, { title: "Curso Fron-end VueJs", description: "Modalidad Online con tutorias", price: 500000, thumbnail: "No image", code: "Curso Fron-end VueJs", stock: 100 });
+    //await PM.deleteProduct(2);
+    //await PM.updateProduct(2, { title: "Curso Fron-end VueJs", description: "Modalidad Online con tutorias", price: 500000, thumbnail: "No image", code: "Curso Fron-end VueJs", stock: 100 });
     console.log(await PM.getProducts());
 })();
