@@ -1,9 +1,9 @@
-const fs = require("fs");
+import fs from "fs";
 
-class ProductManager {
+export default class ProductManager {
     constructor() {
         this.products = [];
-        this.path = "Products.json";
+        this.path = "../products.json";
         this.createFile();
     }
 
@@ -101,7 +101,7 @@ class ProductManager {
     }
 }
 
-(async () => {
+/*(async () => {
     const PM = new ProductManager();
     console.log(await PM.getProducts());
     await PM.addProduct({ title: "Curso Front-end Online", description: "Modalidad a tu ritmo", price: 500000, thumbnail: "No image", code: "Front-end", stock: 25 });
@@ -114,3 +114,5 @@ class ProductManager {
     //await PM.updateProduct(2, { title: "Curso Fron-end VueJs", description: "Modalidad Online con tutorias", price: 500000, thumbnail: "No image", code: "Curso Fron-end VueJs", stock: 100 });
     console.log(await PM.getProducts());
 })();
+
+*/
