@@ -23,7 +23,6 @@ app.get("/products/:pid",async (request, response) => {
     response.send({status:"success",productFind});
 });
 
-
 app.listen(PORT,() => {
     console.log("Server running in port => " + PORT);
 });
