@@ -1,1 +1,76 @@
-[]
+[
+  [
+    {
+      "id": 1,
+      "title": "Curso Front-end Online",
+      "description": "Modalidad a tu ritmo",
+      "price": 500000,
+      "thumbnail": "No image",
+      "code": "Front-end",
+      "stock": 25
+    },
+    {
+      "id": 2,
+      "title": "Curso Back-end Online",
+      "description": "Modalidad a tu ritmo",
+      "price": 400000,
+      "thumbnail": "No image",
+      "code": "backend",
+      "stock": 25
+    },
+    {
+      "id": 3,
+      "title": "Curso ReactJs Online",
+      "description": "Modalidad a tu ritmo",
+      "price": 300000,
+      "thumbnail": "No image",
+      "code": "reactjs",
+      "stock": 25
+    },
+    {
+      "id": 4,
+      "title": "Curso ReactJs Online",
+      "description": "Modalidad tutoria",
+      "price": 200000,
+      "thumbnail": "No image",
+      "code": "reactjst",
+      "stock": 25
+    },
+    {
+      "id": 5,
+      "title": "Curso Vue Online",
+      "description": "Modalidad a tu ritmo",
+      "price": 100000,
+      "thumbnail": "No image",
+      "code": "vue",
+      "stock": 25
+    },
+    {
+      "id": 6,
+      "title": "Curso JavaScript Online",
+      "description": "Modalidad a tu ritmo",
+      "price": 550000,
+      "thumbnail": "No image",
+      "code": "javascript",
+      "stock": 25
+    },
+    {
+      "id": 7,
+      "title": "Curso React Native Online",
+      "description": "Modalidad a tu ritmo",
+      "price": 660000,
+      "thumbnail": "No image",
+      "code": "reactnative",
+      "stock": 25
+    },
+    {
+      "id": 8,
+      "title": "Metodologias Agiles Online",
+      "description": "Modalidad a tu ritmo",
+      "price": 870000,
+      "thumbnail": "No image",
+      "code": "Otros",
+      "stock": 25
+    }
+  ]
+]
