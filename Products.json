@@ -10,83 +10,65 @@
   },
   {
     "id": 2,
-    "title": "Curso Front-end Online",
+    "title": "Curso Back-end Online",
     "description": "Modalidad a tu ritmo",
-    "price": 500000,
+    "price": 400000,
     "thumbnail": "No image",
-    "code": "Front-end",
+    "code": "backend",
     "stock": 25
   },
   {
     "id": 3,
-    "title": "Curso Front-end Online",
+    "title": "Curso ReactJs Online",
     "description": "Modalidad a tu ritmo",
-    "price": 500000,
+    "price": 300000,
     "thumbnail": "No image",
-    "code": "Front-end",
+    "code": "reactjs",
     "stock": 25
   },
   {
     "id": 4,
-    "title": "Curso Front-end Online",
-    "description": "Modalidad a tu ritmo",
-    "price": 500000,
+    "title": "Curso ReactJs Online",
+    "description": "Modalidad tutoria",
+    "price": 200000,
     "thumbnail": "No image",
-    "code": "Front-end",
+    "code": "reactjst",
     "stock": 25
   },
   {
     "id": 5,
-    "title": "Curso Front-end Online",
+    "title": "Curso Vue Online",
     "description": "Modalidad a tu ritmo",
-    "price": 500000,
+    "price": 100000,
     "thumbnail": "No image",
-    "code": "Front-end",
+    "code": "vue",
     "stock": 25
   },
   {
     "id": 6,
-    "title": "Curso Front-end Online",
+    "title": "Curso JavaScript Online",
     "description": "Modalidad a tu ritmo",
-    "price": 500000,
+    "price": 550000,
     "thumbnail": "No image",
-    "code": "Front-end",
+    "code": "javascript",
     "stock": 25
   },
   {
     "id": 7,
-    "title": "Curso Fron-end VueJs",
-    "description": "Modalidad Online con tutorias",
-    "price": 500000,
+    "title": "Curso React Native Online",
+    "description": "Modalidad a tu ritmo",
+    "price": 660000,
     "thumbnail": "No image",
-    "code": "No image",
-    "stock": 100
+    "code": "reactnative",
+    "stock": 25
   },
   {
     "id": 8,
-    "title": "Curso Fron-end VueJs",
-    "description": "Modalidad Online con tutorias",
-    "price": 500000,
+    "title": "Metodologias Agiles Online",
+    "description": "Modalidad a tu ritmo",
+    "price": 870000,
     "thumbnail": "No image",
-    "code": "No image",
-    "stock": 100
-  },
-  {
-    "id": 9,
-    "title": "Curso Fron-end VueJs",
-    "description": "Modalidad Online con tutorias",
-    "price": 500000,
-    "thumbnail": "No image",
-    "code": "No image",
-    "stock": 100
-  },
-  {
-    "id": 10,
-    "title": "Curso Fron-end VueJs",
-    "description": "Modalidad Online con tutorias",
-    "price": 500000,
-    "thumbnail": "No image",
-    "code": "No image",
-    "stock": 100
+    "code": "Otros",
+    "stock": 25
   }
 ]
