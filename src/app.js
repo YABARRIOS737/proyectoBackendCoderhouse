@@ -3,7 +3,7 @@ import ProductManager from "./ProductManager.js";
 const app = express();
 const PORT = 8080;
 
-const productManager = new ProductManager("./products.json");
+const productManager = new ProductManager("");
 
 app.get("/products", async (request, response) => {
     const {limit} =  request.query;
