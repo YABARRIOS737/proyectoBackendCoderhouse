@@ -18,27 +18,41 @@ export default class CartManager {
     }
 
     async newCart() {
-        this.carts.push({id:this.generateId(), products:[]});
-        await fs.promises.writeFile(this.path, JSON.stringify(this.carts));
-        console.log("Cart Created!");
-        return true;
+        this.carts.push({ id: this.generateId(), products: [] });
+        try {
+            await fs.promises.writeFile(this.path, JSON.stringify(this.carts));
+            console.log("Cart Created!");
+            return true;
+        } catch (error) {
+            console.error("Error creating cart:", error);
+            return false;
+        }
     }
 
     async getCart(id) {
-        this.carts = JSON.parse(await fs.promises.readFile(this.path, "utf-8"));
-        return this.carts.find(item => item.id === id);
+        try {
+            this.carts = JSON.parse(await fs.promises.readFile(this.path, "utf-8"));
+            return this.carts.find(item => item.id === id);
+        } catch (error) {
+            console.error("Error getting cart:", error);
+            return null;
+        }
     }
 
     async getCarts() {
-        let carts = JSON.parse(await fs.promises.readFile(this.path, "utf-8"));
-
-        return carts;
+        try {
+            let carts = JSON.parse(await fs.promises.readFile(this.path, "utf-8"));
+            return carts;
+        } catch (error) {
+            console.error("Error getting carts:", error);
+            return [];
+        }
     }
 
     generateId() {
         let max = 0;
         let carts = this.getCarts();
-        this.carts.forEach((item) => {
+        carts.forEach((item) => {
             if (item.id > max) {
                 max = item.id;
             }
@@ -47,32 +61,25 @@ export default class CartManager {
     }
 
     async addProductToCart(cid, pid) {
-        const cart = this.getCart(cid);
-        let pos  = cart.products.findIndex(item => item.id === pid);
+        const cart = await this.getCart(cid);
+        let pos = cart.products.findIndex(item => item.product === pid);
 
-        if (pos > -1){
+        if (pos > -1) {
             cart.products[pos].quantity++;
         } else {
-            cart.products.push({product:pid, quantity:1});
-        }  
-        await fs.promises.writeFile(this.path, JSON.stringify(this.carts));
+            cart.products.push({ product: pid, quantity: 1 });
+        }
+        try {
+            await fs.promises.writeFile(this.path, JSON.stringify(this.carts));
+        } catch (error) {
+            console.error("Error adding product to cart:", error);
+        }
     }
 
     async getProducts() {
         try {
             this.products = JSON.parse(await fs.promises.readFile(this.path, "utf-8"));
             return this.products;
-        } catch (error) {
-            console.error("Error getting products:", error);
-            return [];
-        }
-    }
-    
-
-    async getCarts() {
-        try {
-            this.carts = JSON.parse(await fs.promises.readFile(this.path, "utf-8"));
-            return this.carts;
         } catch (error) {
             console.error("Error getting products:", error);
             return [];
@@ -88,5 +95,5 @@ export default class CartManager {
             return "Not found";
         }
     }
-
 }
+
