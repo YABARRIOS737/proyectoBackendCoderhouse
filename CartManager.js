@@ -49,9 +49,9 @@ export default class CartManager {
         }
     }
 
-    generateId() {
+    async generateId() {
         let max = 0;
-        let carts = this.getCarts();
+        let carts = await this.getCarts(); // Esperar a que los carritos sean leídos del archivo
         carts.forEach((item) => {
             if (item.id > max) {
                 max = item.id;
@@ -59,22 +59,29 @@ export default class CartManager {
         });
         return max + 1;
     }
+    
 
     async addProductToCart(cid, pid) {
-        const cart = await this.getCart(cid);
-        let pos = cart.products.findIndex(item => item.product === pid);
-
-        if (pos > -1) {
-            cart.products[pos].quantity++;
-        } else {
-            cart.products.push({ product: pid, quantity: 1 });
-        }
         try {
+            const cart = await this.getCart(cid);
+            let pos = cart.products.findIndex(item => item.product === pid);
+    
+            if (pos > -1) {
+                cart.products[pos].quantity++;
+            } else {
+                cart.products.push({ product: pid, quantity: 1 });
+            }
+    
             await fs.promises.writeFile(this.path, JSON.stringify(this.carts));
+            console.log("Product Added!");
+            return true;
         } catch (error) {
             console.error("Error adding product to cart:", error);
+            return false;
         }
     }
+    
+    
 
     async getProducts() {
         try {
